@@ -1,0 +1,110 @@
+{{>newscripts}}
+{{>navy}}
+
+<style type = "text/css">
+
+.main_img{
+  display: block;
+  margin-top: 100px;
+  margin-left: 50px;
+  height: 300px;
+  width:900px;
+}
+
+.main_heading{
+  width: 100%;
+    position: relative;
+    margin-left: 50px;
+    width: 900px;
+    height: 100px;
+    padding: 15px 10px 15px 16px;
+    top: 0;
+    background: rgba(0,0,0,0.2);
+}
+
+.head{
+margin-left: 50px;
+margin-top: 50px;
+margin-right: 100px;
+display: flex;
+}
+
+.head-img{
+  height: 200px;
+  width: 400px;
+  margin-right: 100px;
+}
+
+.head-title{
+  height: 100px;
+  width: 400px;
+  flex: 33.33%;
+  background: rgba(0,0,0,0.2);
+}
+.side-image{
+  float: left;
+  height: 100px;
+  width: 100px;
+}
+.side-title{
+  margin-left: 110px;
+  margin-right: 20px;
+  background: rgba(0,0,0,0.2);
+}
+.side{
+margin-top: -780px;
+}
+.side-column{
+  margin-left: 1000px;
+}
+li{
+  list-style: none;
+}
+
+a{
+  color: black;
+}
+</style>
+
+<body>
+  <div class = "main">
+    {{#each records}}
+    {{#each this}}
+    <a href = "{{this.url}}">
+  <img src = "{{this.imagelink}}" class = "main_img"></img>
+  <h3 class = "main_heading">{{this.title}}</h3>
+</a>
+{{/each}}
+{{/each}}
+
+</div>
+<div class = "head">
+  {{#each head_records}}
+  {{#each this}}
+  <a href = "{{this.url}}">
+  <div class = "column">
+  <img class = "head-img" src = "{{this.imagelink}}"></img>
+  <h5 class = "head-title">{{this.title}}</h5></a>
+</div>
+{{/each}}
+{{/each}}
+</div>
+
+<div class = "side">
+  {{#each feature_records}}
+  {{#each this}}
+  <br>
+  <ul class = "list">
+  <li><div class = "side-column">
+    <a href = "{{this.url}}">
+  <img src = "{{this.imagelink}}" class = "side-image"></img>
+  <h5 class = "side-title">{{this.title}}</h5>
+</li>
+</a>
+</div>
+</ul>
+<br>
+{{/each}}
+{{/each}}
+</div>
+</body>

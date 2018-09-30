@@ -1,0 +1,211 @@
+
+{{>newscripts}}
+{{>navy}}
+
+<style type = "text/css">
+
+.mainnews{
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.main-news-img {
+  height: 500px;
+  width: 600px;
+  margin-top: 65px;
+}
+
+.main-news-head {
+  margin-left: -595px;
+  margin-top: 200px;
+  display: inline-block;
+}
+
+.news-list {
+  margin-left: 750px;
+  margin-top: -460px;
+  height: 600px;
+}
+
+.news-head {
+  color: black;
+  display: inline-block;
+  margin-top: -45px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+/*.list{
+  border-bottom: 2px solid grey;
+}*/
+
+.ent-head{
+  margin-top: 30px;
+}
+
+.ent{
+  width: 400px;
+  margin-left: -1px;
+}
+
+.ent-news-img{
+  margin-top: -10px;
+  margin-left: -1px;
+  height: 70px;
+  width: 70px;
+}
+
+.sport-news-img{
+  margin-top: -1px;
+  height: 70px;
+  width: 70px;
+}
+
+.sports-news{
+  margin-left: 80px;
+  display: inline-block;
+  margin-top: -60px;
+}
+.world-news-img{
+  margin-top: -10px;
+  margin-left: 720px;
+  height: 70px;
+  width: 70px;
+}
+
+.ent-news{
+  margin-left: 1px;
+  display: inline-block;
+  width: 400px;
+}
+
+.sports-head{
+  margin-top: 10px;
+  margin-left: 480px;
+}
+
+.sport{
+  width: 400px;
+  margin-left: 480px;
+  background-color: #dbdbdb
+}
+
+.sports-list{
+  margin-left: 480px;
+  display: inline-block;
+  width: 400px;
+}
+
+.sports{
+  margin-top: -443px;
+  margin-left: -20px;
+}
+
+.world-news{
+  margin-left: 800px;
+  margin-top: -50px;
+  display: inline-block;
+  width: 400px;
+}
+
+.world{
+  margin-left: 190px;
+  margin-top: -445px;
+}
+
+.entertainment{
+  margin-left: -20px;
+}
+
+.worldline{
+  width: 400px;
+  margin-left: 720px;
+  margin-top: 25px;
+}
+
+.world-head{
+  margin-left: 720px;
+}
+
+.world-list{
+  margin-top: 25px;
+  width: 400px;
+}
+
+.news{
+  margin-top: -120px;
+  margin-left: 40px;
+}
+
+a{
+  color: black;
+}
+</style>
+
+<body >
+  <div class = "mainnews">
+<br> <br>
+{{#each main_records}}
+{{#each this}}
+
+<img src = "{{this.imagelink}}" class = "main-news-img" href = "{{this.url}}"/>
+<h5 class = "main-news-head"> <a href = "{{this.url}}" >{{this.title}}</a></h5>
+{{/each}}
+{{/each}}
+
+<div class = "news-list">
+{{#each records}}
+{{#each this}}
+<br>
+<h8><a href= "{{this.url}}" class = "news-head">{{this.title}}</a></h8>
+<hr>
+<br>
+{{/each}}
+{{/each}}
+</div>
+</div>
+
+<div class = "news">
+<div class = "entertainment">
+  <h3 class = "ent-head"> Entertainment </h3>
+  <hr class = "ent">
+  {{#each ent_records}}
+  {{#each this}}
+  <div class = "ent-list">
+    <img src = "{{this.imagelink}}" class = "ent-news-img" href = "{{this.url}}">
+    <h8><a href = "{{this.url}}" class = "ent-news">{{this.title}}</a></h8>
+  </div>
+  <br>
+{{/each}}
+{{/each}}
+</div>
+
+<div class = "sports">
+  <h3 class = "sports-head"> Sports </h3>
+  <hr class = "sport">
+  {{#each sport_records}}
+  {{#each this}}
+  <div class = "sports-list">
+    <img src = "{{this.imagelink}}" class = "sport-news-img" href = "{{this.url}}">
+    <h8><a href = "{{this.url}}" class = "sports-news">{{this.title}}</a></h8>
+  </div>
+  <br><br>
+{{/each}}
+{{/each}}
+</div>
+
+
+<div class = "world">
+  <h3 class = "world-head"> World </h3>
+  <hr class = "worldline">
+  {{#each world_records}}
+  {{#each this}}
+  <div class = "world-list">
+    <img src = "{{this.imagelink}}" class = "world-news-img" href = "{{this.url}}">
+    <h8><a href = "{{this.url}}" class = "world-news">{{this.title}}</a></h8>
+  </div>
+{{/each}}
+{{/each}}
+</div>
+</div>
+</body>
